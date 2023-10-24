@@ -31,17 +31,3 @@ To run locally:
 3. Run dev script `npm run dev` in backend to start the server in development environment
 
 4. Run dev script `npm run dev` in frontend to start the client in development environment
-
-**Contribution:**
-
-1. Do you use git flow?
-   No
-
-2. What do you name your branches?
-   [frontend, backend]/[feature, fix]/storyID-Description
-
-3. Do you use github issues or another ticketing website?
-   Jira
-
-4. Do you use pull requests?
-   Yes
