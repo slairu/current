@@ -1,0 +1,60 @@
+.profileImage {
+    background-color: gainsboro;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.typeTag, .nameTag {
+    background-color: black;
+    width: fit-content;
+    height: fit-content;
+    font-weight: 300;
+    padding: 3px;
+    border-radius: 5px;
+    color: white;
+    opacity: 0.7;
+}
+
+
+.nameTag {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 30px;
+    margin-left: 12px;
+}
+
+.singleChar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 30px;
+}
+
+.tagDisplay {
+    height: 50px;
+    gap: 5px;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    bottom: 5px;
+    right: 5px;
+}
+
+.profileFixer {
+    background-color: grey;
+}
+
+.speakerImage {
+    width: 200px;
+    height: 100px;
+}
+
+
+

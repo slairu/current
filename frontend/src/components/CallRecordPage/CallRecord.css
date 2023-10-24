@@ -1,0 +1,56 @@
+.call-history-page {
+  display: flex;
+  height: 100vh;
+}
+
+.header {
+  margin: 15px;
+  display: flex;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+}
+
+.call-list-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 15px;
+  list-style-type: none;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+}
+
+.time-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.call-time {
+  align-self: start;
+  font-size: 14px;
+  width: 160px;
+  margin: 5px;
+}
+
+.button-container {
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  margin-left: auto;
+}
+
+.download-button {
+  padding: 8px;
+  margin-right: 5px;
+  background-color: transparent;
+  border: none;
+  color: blue;
+  cursor: pointer;
+}
+
+.download-button {
+  color: black;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20%;
+}

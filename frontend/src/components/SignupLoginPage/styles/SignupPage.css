@@ -1,0 +1,54 @@
+.centerForm {
+    display: grid;
+    place-items: center;
+}
+
+.promotionText {
+    opacity: 0.7;
+    font-size: large;
+    word-wrap: break-word;
+    width: 400px;
+}
+
+.signupText {
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.signupForm {
+    display: flex;
+    flex-direction: column;
+    margin-top: 27px;
+}
+
+.signupForm > input {
+    height: 50px;
+    border-radius: 8px;
+    border: 0.3px solid gray;
+    /* filter: drop-shadow(0 0 0.05rem black); */
+    margin-bottom: 17px;
+    font-size: 17px;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+.signupForm > label {
+    margin-bottom: 10px;
+    opacity: 0.7;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.continueButton {
+    background-color: rgb(65, 147, 241);
+    border: 0px;
+    height: 50px;
+    border-radius: 8px;
+    color: white;
+    margin-top: 17px;
+}
+
+.signupForm > input:focus {
+    filter: drop-shadow(0 0 0.12rem black);
+    outline: none;
+}

@@ -1,0 +1,1624 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* Add styles to the container to center its content */
+.page-container {
+  display: flex;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+
+.sidebar {
+  flex: 0.05;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.sidebar-top-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sidebar-bottom-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.link {
+  margin-bottom: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.left-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchbar {
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  height: 30px;
+  border: 0.2px solid rgb(194, 193, 193);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  transition: all 0.3s ease;
+  align-items: center;
+  margin: 5px;
+}
+
+.searchbar:hover {
+  border-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.searchbar-part {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.searchbar-part1 {
+  flex: 0.1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchbar-part2 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-section-bottom {
+  flex: 1;
+  background-color: rgb(255, 255, 255);
+  margin: 20px;
+  border-radius: 10px;
+  border: 0.2px solid rgb(194, 193, 193);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Right section styles */
+.right-section {
+flex: 1.5;
+background-color: #fff;
+margin: 10px;
+border-radius: 20px;
+border: 1px solid #ddd;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+display: flex;
+flex-direction: column;
+}
+
+
+.right-section2 {
+  flex: 1.5;
+  background-color: #f0f0f0;
+  margin: 10px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  }
+
+.right-section .no-chat-history {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 75%;
+}
+
+/* Add this CSS to increase the size of the icons */
+svg {
+  font-size: 30px;
+}
+.left-section-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+}
+
+.people_heading {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  font-size: 20px;
+  color: #333;
+  width:80%
+}
+
+.text {
+  font-size: 18px;
+  color: #666;
+  margin:5px
+}
+.people_list {
+  max-height: 180px; /* Set a fixed height to accommodate the people list */
+  overflow-y: auto; /* Enable vertical scrolling if the list overflows */
+  width: 100%; /* Set the width of the ol element to 100% */
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin-right: 25px;
+}
+
+.people_list2 {
+  max-height: 510px; /* Set a fixed height to accommodate the people list */
+  overflow-y: auto; /* Enable vertical scrolling if the list overflows */
+  width: 100%; /* Set the width of the ol element to 100% */
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin-right: 25px;
+}
+
+
+.people_list2::-webkit-scrollbar {
+  width: 5px;
+  
+}
+.no-person-found {
+  font-size: 20px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-result {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+.search-resultsdcds{display: flex;
+ 
+  text-align: center;
+  justify-content: center;
+
+  transition: all 0.3s ease-in-out;}
+
+.search-results{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.results{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.search-result:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.search-result div {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Add this CSS to style the "No person/group found" messages */
+.searchbar-part > div {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  
+}
+
+.searchbar-part > div:last-child {
+  margin-bottom: 0;
+}
+
+.searchbar-part2 > input[type="text"] {
+  flex: 1;
+  font-size: 16px;
+  border: none;
+  outline: none;
+}
+
+/* Add this CSS to center align the "No person/group found" messages */
+.left-section-top .searchbar-part,
+.left-section-bottom .searchbar-part {
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Add this CSS to align the "People" and "Groups" sections with icons */
+.left-section-top .searchbar-partx > div,
+.left-section-bottom .searchbar-partx > div {
+  display: flex;
+  align-items: center;
+}
+
+.left-section-top .searchbar-partx > div svg,
+.left-section-bottom .searchbar-partx > div svg {
+  margin-right: 5px;
+}
+
+/*I've 2 sections in the chat section please display them horizontally*/
+.chat-section{
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid rgb(194, 193, 193);
+}
+
+
+
+.shrink {
+  flex: 0.5;
+  margin-left: 75%;
+  transition: all 0.3s ease;
+}
+
+.shrink .left-section {
+  display: none;
+}
+
+.shrink .right-section {
+  margin: 0;
+  border-radius: 0;
+}
+
+.message-input {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  margin: 10px;
+  border: 0.2px solid rgb(194, 193, 193);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.message-input input[type="text"] {
+  flex: 1;
+  font-size: 16px;
+  padding: 8px;
+  border: none;
+  outline: none;
+}
+
+.message-input .attach-file-button,
+.message-input .send-button {
+  margin-left: 10px;
+  padding: 8px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.attach-file-button4{
+  padding: 8px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.attach-file-button4:hover{
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+
+.message-input .attach-file-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+
+.message-input .send-button:hover{
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20%;
+}
+
+.message-input .attach-file-button:focus,
+.message-input .send-button:focus {
+  outline: none;
+}
+
+.message-input svg {
+  font-size: 18px;
+}
+
+.message-info {
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+  margin-bottom: 8px;
+}
+
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 2px;
+  margin-right: 10px;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.profile-picture:hover {
+  border-color: black;
+  transform: scale(1.05);
+  transition: transform 0.1s ease-in-out;
+}
+
+.message-info .message-time {
+  font-size: 12px;
+  color: rgb(0, 0, 0);
+  margin-left: auto;
+}
+.message-info .message-time:hover {
+  color: black;
+}
+
+.sent-message:hover {
+  border: 2px solid black;
+}
+
+.message-input .send-button {
+  color: blue;
+}
+
+.message-input .send-button:hover {
+  color: black;
+}
+
+.message-text {
+  align-self: self-end;
+  display: inline;
+  font-size: 16px;
+  background-color: #2ecc71;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease;
+  border-color: rgb(10, 10, 87);
+  cursor: pointer;
+}
+
+.message-text a {
+  color: white;
+  text-decoration: underline;
+}
+
+.message-text a:hover {
+  text-decoration: none;
+}
+
+.message-text img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 10px;
+}
+
+
+.message-text2 {
+  align-self: self-end;
+  display: inline;
+  font-size: 16px;
+  background-color: rgb(155, 152, 152);
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease;
+  border-color: rgb(10, 10, 87);
+  cursor: pointer;
+  margin-top: 10px;
+
+  padding: 10px;
+}
+.message-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.sender-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.sender-name {
+  margin-left: 3px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 10px;
+}
+
+.timestamp {
+  display: inline-block;
+  font-size: 10px;
+  color: gray;
+  font-weight: 100;
+  
+}
+
+.message-text {
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.message-text.outsider {
+  background-color: gray;
+  color: white;
+}
+
+.message-text.person {
+  background-color: blue;
+  color: white;
+}
+
+
+/* Add hover effects if desired */
+.message-container:hover .profile-picture {
+  opacity: 0.8;
+}
+
+.message-container:hover .message-text {
+  background-color: darkblue;
+  border-color: rgb(8, 8, 69);
+}
+
+.message-info {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.sender-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.sender-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.message-text {
+  margin-top: 10px;
+}
+
+.chat_heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(250, 250, 250);
+}
+
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.profile-picture:hover {
+  opacity: 0.8;
+}
+
+.person-info {
+  display: flex;
+  align-items: center;
+}
+
+
+
+.person-name {
+  font-weight: bold;
+  color: #333;
+  font-size: 16px;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.chat_heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid rgb(194, 193, 193);
+  cursor: pointer;
+}
+
+
+/*alignt everthing in it towards the centre*/
+.person-name div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.call-options {
+display: flex;
+align-items: center;
+}
+
+.call-button,
+.video-button {
+padding: 8px;
+margin-right: 5px;
+background-color: transparent;
+border: none;
+color: blue;
+cursor: pointer;
+}
+
+.call-button:hover,
+.video-button:hover {
+color: black;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20%;
+}
+
+.image-con4 {
+  position: relative;
+}
+
+.message4 {
+  display: none;
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  font-size: 12px;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.image-con4:hover .message4 {
+  display: block;
+}
+
+.reply-button {
+  display: flex;
+  align-items: center;
+  margin: 0 2px;
+  border-radius: 5px;
+  background-color: #e1e1e1;
+  color: #555;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.react-button:hover,
+.reply-button:hover {
+  background-color: #555;
+  color: #fff;
+  transform: translateY(-2px);
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reactions {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.reactions .reaction-emoji {
+  font-size: 20px;
+  margin-right: 5px;
+  transition: transform 0.3s, opacity 0.3s;
+  cursor: pointer;
+}
+
+.reactions .reaction-emoji:hover {
+  transform: scale(1.2);
+}
+
+.message-options {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.message-options .react-button,
+.message-options .reply-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 5px;
+  margin: 0 1px;
+  border-radius: 5px;
+  background-color: #e1e1e1;
+  color: #555;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.message-options .react-button:hover,
+.message-options .reply-button:hover {
+  background-color: #555;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Add your existing CSS styles here */
+
+.message.last-seen-message {
+margin-bottom: 10px;
+padding: 10px;
+border-radius: 10px;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+position: relative;
+backdrop-filter: blur(2px); 
+}
+
+.message:hover{
+transform: translateY(-2px);
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.message.last-seen-message::before {
+content: "Seen ✓"; /* Add a checkmark or any other symbol you like */
+margin-right: 8px;
+margin-left: 2px;
+font-weight: bold; /* Make the indicator bold */
+font-family: "Helvetica Neue", sans-serif;
+font-size: 10px;
+color: #555;
+
+}
+
+Add hover styles for the seen message indicator
+.message.last-seen-message:hover::before {
+opacity: 0.8;
+transform: translateY(-2px);
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Message styles */
+.message-history {
+flex: 1;
+overflow-y: auto;
+padding: 10px;
+/*add url https://i.pinimg.com/originals/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg background*/
+background-image: url("https://i.pinimg.com/originals/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg");
+}
+
+.message-wrapper {
+display: inline-block; /* Add this to prevent extra width from block elements */
+transition: transform 0.2s ease; /* Add a transition for smooth size changes */
+}
+.message {
+margin-bottom: 10px;
+padding: 10px;
+border-radius: 10px;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+position: relative;
+backdrop-filter: blur(2px); /* Add the blur effect to the chat messages */
+transition: transform 0.3s ease; /* Add a transition for smooth size changes */
+}
+
+.chat_heading
+/* Add this CSS code to style the "You are typing..." indicator */
+.typing-online {
+color: rgb(76, 184, 76);
+font-size: 12px;
+margin-top: 5px;
+}
+
+/* Optional: Style for the sender's name */
+.sender-name {
+font-weight: bold;
+}
+
+/* Optional: Style for the timestamp */
+.timestamp {
+font-size: 12px;
+color: #888;
+margin-top: 4px;
+}
+
+.message:hover {
+/* Please make the message bigger */
+backdrop-filter: blur(4px); /* Add the blur effect to the chat messages */
+transition: transform 0.3s ease, box-shadow 0.1s ease; /* Add a transition for smooth size changes and box-shadow */
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add a box shadow on hover */
+}
+
+.message-info {
+display: flex;
+align-items: center;
+margin-bottom: 5px;
+}
+
+.message-info .profile-picture {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+margin-right: 10px;
+cursor: pointer;
+transition: opacity 0.3s ease;
+}
+
+.message-info .profile-picture:hover {
+opacity: 0.8;
+}
+
+
+
+.message-text {
+font-size: 16px;
+word-wrap: break-word;
+}
+
+.message-text.user {
+background-color: #2ecc71;
+margin-bottom: 10px;
+padding: 10px;
+border-radius: 10px;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+position: relative;
+backdrop-filter: blur(1px); /* Add the blur effect to the chat messages */
+}
+
+.message-text.user:hover{
+transform: translateY(-2px);
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.message-text.user > div{
+transform: translateY(-2px);
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.message-text.bot {
+background-color: #3498db;
+margin-bottom: 10px;
+padding: 10px;
+border-radius: 10px;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+position: relative;
+backdrop-filter: blur(1px); /* Add the blur effect to the chat messages */
+}
+
+.message-text.outsider {
+background-color: #f39c12;
+margin-bottom: 10px;
+padding: 10px;
+border-radius: 10px;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+position: relative;
+backdrop-filter: blur(1px); /* Add the blur effect to the chat messages */
+}
+
+.message-options {
+display: flex;
+align-items: center;
+justify-content: flex-end;
+margin-top: 5px;
+}
+
+
+/* ... (previous styles) */
+.profile-container {
+position: absolute;
+top: 70px; /* Adjust the top position as per your design */
+right: 20px; /* Adjust the right position as per your design */
+width: 220px;
+background-color: #fff;
+box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+padding: 12px;
+z-index: 999;
+}
+/* Style for the profile picture in the profile container */
+.profile-container .profile-picture {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+margin-right: 12px;
+}
+
+/* Style for the profile name in the profile container */
+.profile-name {
+font-size: 16px;
+font-weight: bold;
+}
+
+/* Style for the profile status in the profile container */
+.profile-status {
+font-size: 12px;
+color: #999;
+margin-top: 4px;
+margin-bottom: 4px;
+}
+
+.groups-status {
+font-size: 12px;
+color: #999;
+margin-top: 4px;
+margin-bottom: 4px;
+}
+
+/* Add these styles to your Chat.css or create a new CSS file for the Chat component */
+.user-status {
+background-color: #000000; /* Dark background color resembling a code editor */
+color: #ffffff; /* Text color */
+font-family: "Courier New", monospace; /* Code-like font */
+font-size: 12px; /* Font size */
+padding: 8px 12px; /* Padding around the text */
+border-radius: 4px; /* Rounded corners for a modern look */
+border: 1px solid #373b41; /* Border for a code block appearance */
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Optional shadow effect */
+}
+
+/* Add styling for the profile options */
+.profile-options {
+margin-top: 16px;
+border-top: 1px solid #d3d3d3;
+padding-top: 16px;
+}
+
+
+.option {
+display: flex;
+align-items: center;
+margin-bottom: 8px;
+cursor: pointer;
+text-align: center;
+justify-content: center;
+}
+
+.option svg {
+margin-right: 8px;
+}
+
+/* Hover effect for options */
+.option:hover {
+background-color: #f5f5f5;
+border-radius: 4px;
+}
+/* Hover effect for options */
+.option:hover {
+background-color: #d7e5e7;
+transform: translateY(-2px);
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.option2{
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  cursor: pointer;
+  text-align: center;
+  justify-content: center;
+  }
+  
+  .option2 svg {
+  margin-right: 8px;
+  }
+  
+  /* Hover effect for options */
+  .option2:hover {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  }
+  /* Hover effect for options */
+  .option2:hover {
+  background-color: #d7e5e7;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+/* Styling for option text */
+.option span {
+color: #333;
+}
+
+/* Add more CSS as needed */
+/* Add styles to center the "People" and "Groups" sections with icons */
+
+.left-section-top .searchbar-partx > div svg,
+.left-section-bottom .searchbar-partx > div svg {
+margin-right: 5px;
+}
+
+/* Add styles for the "People" and "Groups" sections */
+.left-section-top .searchbar-part div,
+.left-section-bottom .searchbar-part div {
+margin-bottom: 10px;
+display: flex;
+}
+
+
+/* Styling for the profile picture in the user search results */
+.person-info .profile-picture {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+margin-right: 10px;
+cursor: pointer;
+transition: opacity 0.3s ease;
+}
+
+.person-info .profile-picture:hover {
+opacity: 0.8;
+}
+
+/* Styling for the user's name in the user search results */
+.person-name {
+font-weight: bold;
+color: #333;
+font-size: 16px;
+align-items: center;
+}
+
+.person-name:hover {
+transform: translateY(-2px);
+}
+
+/* Styling for the call and video buttons in the user search results */
+.call-options {
+display: flex;
+align-items: center;
+}
+
+.call-button,
+.video-button {
+padding: 8px;
+margin-right: 5px;
+background-color: transparent;
+border: none;
+color: blue;
+cursor: pointer;
+}
+
+.call-button:hover,
+.video-button:hover {
+color: black;
+}
+
+/* Styling for the user's status in the user search results */
+.user-status {
+background-color: #000000;
+color: #ffffff;
+font-family: "Courier New", monospace;
+font-size: 12px;
+padding: 8px 12px;
+border-radius: 4px;
+border: 1px solid #373b41;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for the profile options in the user search results */
+.profile-options {
+margin-top: 16px;
+border-top: 1px solid #d3d3d3;
+padding-top: 16px;
+}
+
+.option {
+display: flex;
+align-items: center;
+margin-bottom: 8px;
+cursor: pointer;
+}
+
+.option svg {
+margin-right: 8px;
+}
+
+/* Hover effect for options in the user search results */
+.option:hover {
+background-color: #f5f5f5;
+border-radius: 4px;
+transform: translateY(-2px);
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Chat.css */
+.chat-search-bar {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+}
+
+
+/* Styles for replies */
+.reply {
+  padding: 10px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  background-color: #dfdede;
+  border-radius: 15px; /* Increase the border-radius for a smoother appearance */
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15); /* Slightly increase the box shadow */
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.reply:hover {
+  transform: scale(1.02); /* Add a slight scale effect on hover for interaction */
+}
+
+.reply p {
+  margin: 0;
+  font-size: 14px; /* Increase the font size for better readability */
+}
+
+/* Add a ribbon for the "Edited message" label */
+.reply::before {
+  content: "Edited message";
+  display: block;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3px 8px;
+  background-color: #e74c3c; /* Use a red color for the ribbon */
+  color: #000000;
+  border-radius: 20px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0; /* Initially set the opacity to 0, we'll show it for edited messages later */
+  transition: opacity 0.3s ease;
+}
+
+.bb{
+  align-items: center;
+
+}
+
+.reply.edited-message::before {
+  opacity: 1; /* Show the ribbon for edited messages */
+}
+/* Add the hover effect for the "You are replying to [username]" div */
+.replyingto {
+  background-color: #e74c3c; /* Use a red color for the ribbon */
+  color: #000000;
+  border-radius: 20px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 12px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease-in-out;
+  
+}
+
+.replyingto:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+  
+}
+
+/* Add an icon for the edited message ribbon */
+.reply.edited-message::after {
+  content: "✎";
+  display: block;
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+}
+
+/* Style the profile picture */
+.reply .profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+/* Style the message text */
+.reply .message-text {
+  font-size: 14px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  align-items: center;
+  justify-content: center;
+}/* Add styling for the user container */
+.user-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Style the user name */
+.user-name {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+/* Hide the default checkbox styles */
+.custom-checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+.bb{
+  justify-content: center;
+  text-align: center;
+}
+/* Style the custom checkbox */
+.custom-checkbox:checked {
+  background-color: #000000;
+  border-color: #000000;
+}
+
+/* Optional: Add a hover effect for the custom checkbox */
+.custom-checkbox:hover {
+  border-color: #000000;
+}
+
+/* Optional: Add focus styles for accessibility */
+.custom-checkbox:focus {
+}
+
+
+.create-group-button {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border: none;
+  height: 30px;
+
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease; /* Adding a smooth transition on hover */
+  text-align: center;
+  margin: 5px;
+}
+/* Add CSS to the user-list-container to enable scrolling */
+.user-list-container {
+  max-height: 200px; /* Adjust the height as per your requirement */
+  overflow-y: auto;
+}
+
+
+.confirm-group-button {
+  background-color: green;
+  
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  height: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease; /* Adding a smooth transition on hover */
+  text-align: center;
+  margin-left: 10px;
+  margin:5px;
+}
+
+.close-group-button {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  height: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease; /* Adding a smooth transition on hover */
+  text-align: center;
+
+  margin-top: 10px
+}
+
+.particpants_foreditting{
+  box-shadow: #000000;
+}
+.close-group-button:hover{
+  background-color: #2780c9; /* Darken the color on hover */
+  transform: scale(1.05);
+}
+
+.particpants_foreditting{
+  text-align: center;
+}
+
+.username_listing{
+  font-size: 12px;
+  color: #126b37;
+}
+.cancel-group-button {
+  background-color: rgb(255, 0, 0);
+  color: white;
+  border: none;
+  height: 30px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease; /* Adding a smooth transition on hover */
+  text-align: center;
+}
+/* Styling for hover effect */
+.create-group-button:hover {
+  background-color: #2780c9; /* Darken the color on hover */
+  transform: scale(1.05); /* Slightly increase the size on hover */
+  /* You can add more styles like box-shadow, opacity change, etc., for additional UI effects */
+}
+
+
+.ss {
+  color: #201606;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px;
+  width: 40%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #c4c565;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+  position: relative;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.ss:hover {
+
+  background-color: #e0e0a8;
+  transform: scale(1.05);
+}
+
+.ss3 {
+
+  color: #201606;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px;
+  width: 60%;
+  max-width: 500px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 10px;
+  margin-bottom: 20px; 
+  background-color: lightblue;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+  position: relative;
+  text-align: center;
+}
+
+.ss3:hover {
+
+  background-color: #ddd; /* Light grey on hover */
+  transform: scale(1.01); 
+}
+
+.ss4 {
+
+  color: rgb(104, 103, 103);
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px;
+  width: 60%;
+  max-width: 500px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 10px;
+  margin-bottom: 20px; 
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+  position: relative;
+  text-align: center;
+}
+
+.ss4:hover {
+
+  background-color: #ddd; /* Light grey on hover */
+  transform: scale(1.01); 
+}
+.confirm-group-button:hover {
+  background-color: #333; /* Darken the color on hover */
+  transform: scale(1.05); /* Slightly increase the size on hover */
+  /* You can add more styles like box-shadow, opacity change, etc., for additional UI effects */
+}
+
+.cancel-group-button:hover {
+  background-color: #333; /* Darken the color on hover */
+  transform: scale(1.05); /* Slightly increase the size on hover */
+  /* You can add more styles like box-shadow, opacity change, etc., for additional UI effects */
+}
+/* Style the timestamp */
+.reply .timestamp {
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.7); /* Slightly reduce the opacity for a subtle effect */
+}
+
+/* Style the reactions */
+.reply .reactions {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.reply .reaction-emoji {
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+/* Assuming your sidebar has a fixed width */
+.sidebar {
+  width: 70px;
+  padding: 20px 0;
+}
+
+.sidebar:hover {
+  width: 200px;
+
+}
+
+/* Styles for both top and bottom links */
+.link {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+}
+
+/* Hide the icon text by default */
+.link .icon-text {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(5px, -50%);
+  white-space: nowrap;
+  background-color: #222; /* Change the background color to your liking */
+  color: #fff; /* Change the text color to your liking */
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: opacity 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+/* Show the icon text on hover */
+.link:hover .icon-text {
+  opacity: 1;
+}
+
+.link:hovder {
+  background-color: #333;
+}
+
+/* Style for the container holding the text and icon */
+.people_heading {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease; /* Adding transition effect on hover */
+  align-items: center;
+}
+
+/* Style for the icon */
+.people_heading svg {
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+/* Hover effect on the container */
+.people_heading:hover {
+}/* Styling for the left-section-bottom */
+.left-section-bottom {
+  background-color: #f5f5f5;
+}
+
+/* Styling for the People heading */
+.people-heading {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Styling for the person icon */
+.person-icon {
+  font-size: 28px;
+  color: gray;
+  margin-left: 10px;
+}
+
+/* Styling for the searchbar-part */
+.searchbar-part {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* Styling for no results */
+.no-results {
+  color: gray;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Styling for the search results */
+.search-result {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-result:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.01); /* Slightly increase the size on hover */
+}
+
+/* Styling for the profile picture */
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Styling for the user name */
+.user-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  flex: 1;
+}
+
+/* Styling for the custom checkbox */
+.custom-checkbox {
+  margin-right: 10px;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+.user-list-container  {
+  overflow-y: auto; /* Enable vertical scrolling if the list overflows */
+  width: 100%; /* Set the width of the ol element to 100% */
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-right: 25px;
+  height: 120px;
+}
+
+.user-list-container ::-webkit-scrollbar {
+  width: 5px;
+}
+
+.user-list-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.small_size{
+  font-family: 'Times New Roman', Times, serif;
+  margin:10px
+}
+/* Assuming the logo-img is the ID of your logo image element */
+#logo-img {
+  /* Define the maximum width and height to make the logo small */
+  max-width: 100px;
+  max-height: 100px;
+  
+  /* Add some padding around the logo for breathing space */
+  margin: 20px;
+  /* Add a border to the logo */
+
+  /* Add rounded corners to the logo */
+
+  /* Apply a box shadow for depth */
+
+  /* Add a subtle transition on hover to make it interactive */
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+/* Add a slight scale-up effect on hover */
+#logo-img:hover {
+  transform: scale(1.1);
+}
+
+.profile_button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  height: 30px;
+
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease; /* Adding a smooth transition on hover */
+  text-align: center;
+}
+
+.profile_button:hover{
+  background-color: #1a851f;
+}
+
+.person-name:hover{
+  transform: scale(1.01);
+  transition: transform 0.1s ease-in-out;
+}

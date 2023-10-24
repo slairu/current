@@ -1,0 +1,877 @@
+openapi: 3.0.0
+info:
+  version: "1.0.0"
+  title: current
+  description: The API for current
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/CSCC01-current/currentapi/1.0.0
+  - url: http://localhost:4200
+paths:
+  # TODO pagination, query params
+  /api/v1/users:
+    get:
+      summary: Get all users.
+      responses:
+        200:
+          description: The array of all users.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - users
+                properties:
+                  users:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/User"
+        400:
+          $ref: "#/components/responses/BadRequest"
+        404:
+          $ref: "#/components/responses/NotFound"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+  /api/v1/users/{_id}:
+    parameters:
+      - name: _id
+        description: The mongo _id of a user
+        in: path
+        required: true
+        schema:
+          $ref: "#/components/schemas/MongoId"
+    get:
+      summary: Get a user by _id.
+      responses:
+        200:
+          description: The user corresponding to the provided _id.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        400:
+          $ref: "#/components/responses/BadRequest"
+        404:
+          $ref: "#/components/responses/NotFound"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+  /api/v1/users/{_id}/username:
+    parameters:
+      - name: _id
+        description: The mongo _id of a user
+        in: path
+        required: true
+        schema:
+          $ref: "#/components/schemas/MongoId"
+    get:
+      summary: Get a user's username by _id.
+      responses:
+        200:
+          description: The user's username corresponding to the provided _id.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - username
+                properties:
+                  username:
+                    type: string
+        400:
+          $ref: "#/components/responses/BadRequest"
+        404:
+          $ref: "#/components/responses/NotFound"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+    put:
+      summary: Update a user's username. Must be signed in as the user corresponding to the provided _id.
+      requestBody:
+        description: The new username
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - username
+              properties:
+                username:
+                  type: string
+      responses:
+        204:
+          description: Successfully updated the username.
+        400:
+          $ref: "#/components/responses/BadRequest"
+        403:
+          $ref: "#/components/responses/Forbidden"
+        404:
+          $ref: "#/components/responses/NotFound"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+  /api/v1/users/{_id}/email:
+    parameters:
+      - name: _id
+        description: The mongo _id of a user
+        in: path
+        required: true
+        schema:
+          $ref: "#/components/schemas/MongoId"
+    get:
+      summary: Get a user's email by _id.
+      responses:
+        200:
+          description: The user's email corresponding to the provided _id.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - email
+                properties:
+                  email:
+                    type: string
+                    format: email
+        400:
+          $ref: "#/components/responses/BadRequest"
+        404:
+          $ref: "#/components/responses/NotFound"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+  /api/v1/users/{_id}/phoneNumber:
+    parameters:
+      - name: _id
+        description: The mongo _id of a user
+        in: path
+        required: true
+        schema:
+          $ref: "#/components/schemas/MongoId"
+    get:
+      summary: Get a user's phone number by _id.
+      responses:
+        200:
+          description: The user's phone number corresponding to the provided _id.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - phoneNumber
+                properties:
+                  phoneNumber:
+                    type: string
+        400:
+          $ref: "#/components/responses/BadRequest"
+        404:
+          $ref: "#/components/responses/NotFound"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+    put:
+      summary: Update a user's phone number. Must be signed in as the user corresponding to the provided _id.
+      requestBody:
+        description: The new phone number
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - phoneNumber
+              properties:
+                phoneNumber:
+                  type: string
+      responses:
+        201:
+          description: Successfully added phone number.
+        204:
+          description: Successfully updated the phone number.
+        400:
+          $ref: "#/components/responses/BadRequest"
+        403:
+          $ref: "#/components/responses/Forbidden"
+        404:
+          $ref: "#/components/responses/NotFound"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+  /api/v1/users/{_id}/bio:
+    parameters:
+      - name: _id
+        description: The mongo _id of a user
+        in: path
+        required: true
+        schema:
+          $ref: "#/components/schemas/MongoId"
+    get:
+      summary: Get a user's bio by _id.
+      responses:
+        200:
+          description: The user's bio corresponding to the provided _id.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - bio
+                properties:
+                  bio:
+                    type: string
+        400:
+          $ref: "#/components/responses/BadRequest"
+        404:
+          $ref: "#/components/responses/NotFound"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+    put:
+      summary: Update a user's bio.  Must be signed in as the user corresponding to the provided _id.
+      requestBody:
+        description: The new bio
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - bio
+              properties:
+                bio:
+                  type: string
+      responses:
+        201:
+          description: Successfully added bio.
+        204:
+          description: Successfully updated the bio.
+        400:
+          $ref: "#/components/responses/BadRequest"
+        403:
+          $ref: "#/components/responses/Forbidden"
+        404:
+          $ref: "#/components/responses/NotFound"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+  /api/v1/users/{_id}/profilePicture:
+    parameters:
+      - name: _id
+        description: The mongo _id of a user
+        in: path
+        required: true
+        schema:
+          $ref: "#/components/schemas/MongoId"
+    get:
+      summary: Get a user's profile picture by _id.
+      responses:
+        200:
+          description: The user's profile picture corresponding to the provided _id.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - profilePicture
+                properties:
+                  profilePicture:
+                    type: string
+                    format: uri
+        400:
+          $ref: "#/components/responses/BadRequest"
+        404:
+          $ref: "#/components/responses/NotFound"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+    put:
+      summary: Update a user's profile picture.  Must be signed in as the user corresponding to the provided _id.
+      # validating form data not working
+      # requestBody:
+      #   required: true
+      #   content:
+      #     multipart/form-data:
+      #       schema:
+      #         type: object
+      #         properties:
+      #           profilePicture:
+      #             type: string
+      #             format: binary
+      responses:
+        201:
+          description: Successfully added profile picture.
+        204:
+          description: Successfully updated the profile picture.
+        400:
+          $ref: "#/components/responses/BadRequest"
+        403:
+          $ref: "#/components/responses/Forbidden"
+        404:
+          $ref: "#/components/responses/NotFound"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+  /api/v1/users/{_id}/status:
+    parameters:
+      - name: _id
+        description: The mongo _id of a user
+        in: path
+        required: true
+        schema:
+          $ref: "#/components/schemas/MongoId"
+    get:
+      summary: Get a user's status by _id.
+      responses:
+        200:
+          description: The user's status corresponding to the provided _id.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - status
+                properties:
+                  status:
+                    $ref: "#/components/schemas/Status"
+        400:
+          $ref: "#/components/responses/BadRequest"
+        404:
+          $ref: "#/components/responses/NotFound"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+    put:
+      summary: Update a user's status.  Must be signed in as the user corresponding to the provided _id.
+      requestBody:
+        description: The new status
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - status
+              properties:
+                status:
+                  $ref: "#/components/schemas/Status"
+      responses:
+        204:
+          description: Successfully updated the status.
+        400:
+          $ref: "#/components/responses/BadRequest"
+        403:
+          $ref: "#/components/responses/Forbidden"
+        404:
+          $ref: "#/components/responses/NotFound"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+  /api/v1/users/{_id}/calendar/events:
+    parameters:
+      - name: _id
+        description: The mongo _id of a user
+        in: path
+        required: true
+        schema:
+          $ref: "#/components/schemas/MongoId"
+    get:
+      summary: Get all events for a user by _id.
+      responses:
+        200:
+          description: The events corresponding to the provided _id.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - events
+                properties:
+                  events:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Event"
+        400:
+          $ref: "#/components/responses/BadRequest"
+        404:
+          $ref: "#/components/responses/NotFound"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+    post:
+      summary: Create a new event. Must be signed in as the user corresponding to the provided _id.
+      requestBody:
+        description: The new event
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Event"
+      responses:
+        201:
+          description: Successfully created the event.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - _id
+                properties:
+                  _id:
+                    allOf:
+                      - $ref: "#/components/schemas/MongoId"
+        400:
+          $ref: "#/components/responses/BadRequest"
+        403:
+          $ref: "#/components/responses/Forbidden"
+        409:
+          $ref: "#/components/responses/Conflict"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+  /api/v1/users/{_id}/calendar/events/{eventId}:
+    parameters:
+      - name: _id
+        description: The mongo _id of a user
+        in: path
+        required: true
+        schema:
+          $ref: "#/components/schemas/MongoId"
+      - name: eventId
+        description: The mongo _id of an event
+        in: path
+        required: true
+        schema:
+          $ref: "#/components/schemas/MongoId"
+    get:
+      summary: Get an event by _id.
+      responses:
+        200:
+          description: The event corresponding to the provided _id.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Event"
+        400:
+          $ref: "#/components/responses/BadRequest"
+        404:
+          $ref: "#/components/responses/NotFound"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+    delete:
+      summary: Delete an event by _id. Must be signed in as the user corresponding to the provided _id.
+      responses:
+        204:
+          description: Successfully deleted the event.
+        400:
+          $ref: "#/components/responses/BadRequest"
+        403:
+          $ref: "#/components/responses/Forbidden"
+        404:
+          $ref: "#/components/responses/NotFound"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+  /api/v1/users/{_id}/calendar/events/{eventId}/name:
+    parameters:
+      - name: _id
+        description: The mongo _id of a user
+        in: path
+        required: true
+        schema:
+          $ref: "#/components/schemas/MongoId"
+      - name: eventId
+        description: The mongo _id of an event
+        in: path
+        required: true
+        schema:
+          $ref: "#/components/schemas/MongoId"
+    get:
+      summary: Get an event's name by _id.
+      responses:
+        200:
+          description: The event's name corresponding to the provided _id.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - name
+                properties:
+                  name:
+                    type: string
+                    maxLength: 50
+                    minLength: 1
+                    pattern: ^[a-zA-Z0-9 ]+$
+        400:
+          $ref: "#/components/responses/BadRequest"
+        404:
+          $ref: "#/components/responses/NotFound"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+    put:
+      summary: Update an event's name.  Must be signed in as the user corresponding to the provided _id.
+      requestBody:
+        description: The new name
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+                  maxLength: 50
+                  minLength: 1
+                  pattern: ^[a-zA-Z0-9 ]+$
+      responses:
+        204:
+          description: Successfully updated the name.
+        400:
+          $ref: "#/components/responses/BadRequest"
+        403:
+          $ref: "#/components/responses/Forbidden"
+        404:
+          $ref: "#/components/responses/NotFound"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+  /api/v1/users/{_id}/calendar/events/{eventId}/color:
+    parameters:
+      - name: _id
+        description: The mongo _id of a user
+        in: path
+        required: true
+        schema:
+          $ref: "#/components/schemas/MongoId"
+      - name: eventId
+        description: The mongo _id of an event
+        in: path
+        required: true
+        schema:
+          $ref: "#/components/schemas/MongoId"
+    get:
+      summary: Get an event's color by _id.
+      responses:
+        200:
+          description: The event's color corresponding to the provided _id.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - color
+                properties:
+                  color:
+                    type: string
+                    pattern: ^#([0-9a-f]{3}){1,2}$
+        400:
+          $ref: "#/components/responses/BadRequest"
+        404:
+          $ref: "#/components/responses/NotFound"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+    put:
+      summary: Update an event's color. Must be signed in as the user corresponding to the provided _id.
+      requestBody:
+        description: The new color
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - color
+              properties:
+                color:
+                  type: string
+                  pattern: ^#([0-9a-f]{3}){1,2}$
+      responses:
+        204:
+          description: Successfully updated the color.
+        400:
+          $ref: "#/components/responses/BadRequest"
+        403:
+          $ref: "#/components/responses/Forbidden"
+        409:
+          $ref: "#/components/responses/Conflict"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+  /api/v1/groups/{_id}/calls:
+    parameters:
+      - name: _id
+        description: The mongo _id of a group
+        in: path
+        required: true
+        schema:
+          $ref: "#/components/schemas/MongoId"
+    get:
+      summary: Get calls in a group by _id. Must be signed in and a member of the group.
+      responses:
+        200:
+          description: The calls in the group corresponding to the provided _id.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - calls
+                properties:
+                  calls:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Call"
+        400:
+          $ref: "#/components/responses/BadRequest"
+        403:
+          $ref: "#/components/responses/Forbidden"
+        404:
+          $ref: "#/components/responses/NotFound"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+    post:
+      summary: Create a call in a group. Must be signed in and a member of the group.
+      # validating form data not working
+      # requestBody:
+      #   required: true
+      #   content:
+      #     multipart/form-data:
+      #       schema:
+      #         type: object
+      #         properties:
+      #           audioFile:
+      #             type: string
+      #             format: binary
+      responses:
+        201:
+          description: Successfully created the call.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Call"
+        400:
+          $ref: "#/components/responses/BadRequest"
+        403:
+          $ref: "#/components/responses/Forbidden"
+        409:
+          $ref: "#/components/responses/Conflict"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+  /api/v1/session:
+    get:
+      summary: Get the id of the signed in user.
+      responses:
+        200:
+          description: The id of the signed in user.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - userId
+                properties:
+                  userId:
+                    $ref: "#/components/schemas/MongoId"
+        401:
+          $ref: "#/components/responses/Unauthorized"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+components:
+  schemas:
+    Group:
+      type: object
+      description: group details
+      required:
+        - _id
+        - name
+        - members
+        - admins
+        - owner
+        - description
+        - tags
+        - createdAt
+        - updatedAt
+        - __v
+      properties:
+        _id:
+          readOnly: true
+          allOf:
+            - $ref: "#/components/schemas/MongoId"
+        name:
+          type: string
+        members:
+          type: array
+          items:
+            $ref: "#/components/schemas/User"
+        admins:
+          type: array
+          items:
+            $ref: "#/components/schemas/User"
+        owner:
+          $ref: "#/components/schemas/User"
+        description:
+          type: string
+          maxLength: 500
+        tags:
+          type: array
+          items:
+            type: string
+        createdAt:
+          readOnly: true
+          type: string
+          format: date-time
+        updatedAt:
+          readOnly: true
+          type: string
+          format: date-time
+        __v:
+          readOnly: true
+          type: integer
+          format: int32
+    User:
+      type: object
+      description: user
+      required:
+        - _id
+        - username
+        - email
+        - __v
+      properties:
+        _id:
+          readOnly: true
+          allOf:
+            - $ref: "#/components/schemas/MongoId"
+        username:
+          type: string
+        email:
+          type: string
+          format: email
+        phoneNumber:
+          type: string
+          pattern: ^\d{10}$
+        bio:
+          type: string
+          maxLength: 500
+        profilePicture:
+          type: string
+          format: uri
+        groups:
+          type: array
+          items:
+            $ref: "#/components/schemas/Group"
+        createdAt:
+          readOnly: true
+          type: string
+          format: date-time
+        updatedAt:
+          readOnly: true
+          type: string
+          format: date-time
+        __v:
+          readOnly: true
+          type: integer
+          format: int32
+    Status:
+      type: string
+      enum:
+        - online
+        - offline
+        - away
+        - busy
+        - do not disturb
+        - invisible
+    Event:
+      type: object
+      required:
+        - name
+        - startTimestamp
+        - endTimestamp
+        - color
+      properties:
+        name:
+          type: string
+          maxLength: 50
+          minLength: 1
+          pattern: ^[a-zA-Z0-9 ]+$
+        startTimestamp:
+          type: string
+          format: date-time
+        endTimestamp:
+          type: string
+          format: date-time
+        color:
+          type: string
+          pattern: ^#([0-9a-f]{3}){1,2}$
+    MongoId:
+      type: string
+      # some format?
+    Call:
+      type: object
+      required:
+        - _id
+        - audioFile
+        - startTimestamp
+        - endTimestamp
+        - transcript
+      properties:
+        _id:
+          readOnly: true
+          allOf:
+            - $ref: "#/components/schemas/MongoId"
+        audioFile:
+          type: string
+          format: uri
+        startTimestamp:
+          type: string
+          format: date-time
+        endTimestamp:
+          type: string
+          format: date-time
+        transcript:
+          type: string
+    Errors:
+      type: object
+      required:
+        - errors
+      properties:
+        errors:
+          type: array
+          items:
+            $ref: "#/components/schemas/Error"
+    Error:
+      type: object
+      required:
+        - path
+        - message
+        - detail
+      properties:
+        path:
+          type: string
+        message:
+          type: string
+        detail:
+          type: string
+  responses:
+    BadRequest:
+      description: request format is invalid
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Errors"
+    Unauthorized:
+      description: action requires authentication
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Errors"
+    Forbidden:
+      description: insufficient permission for this action
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Errors"
+    NotFound:
+      description: specified resource not found
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Errors"
+    Conflict:
+      description: request has correct format but data currently conflicts
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Errors"
+    InternalServerError:
+      description: error processing request on server
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Errors"

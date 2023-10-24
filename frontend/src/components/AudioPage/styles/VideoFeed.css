@@ -1,0 +1,131 @@
+.videoFeedPage {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  background-color: transparent;
+  min-width: fit-content;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.startRecording,
+.stopRecording {
+  font-weight: bold;
+  font-size: large;
+  color: black;
+}
+
+.roomTimer {
+  position: absolute;
+  background-color: white;
+  opacity: 0.7;
+  top: 10px;
+  left: 10px;
+  border-radius: 10px;
+  font-size: 22px;
+  padding: 3px;
+}
+
+.buttonSection {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+  position: absolute;
+  bottom: 0px;
+}
+
+.userButton {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 0px;
+  height: 100px;
+  width: 100px;
+  border-radius: 5px;
+  z-index: 5;
+}
+
+.buttonSectionLeft,
+.buttonSectionRight {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.buttonSectionRight {
+  margin-right: 15px;
+}
+
+.buttonSectionLeft {
+  margin-left: 15px;
+}
+
+.videoComponent {
+  width: 100%;
+  height: 100%;
+  position: absolute; /* magic sauce */
+  object-fit: fill;
+  z-index: 3;
+}
+
+.userButton:hover {
+  background-color: blue;
+}
+
+.bigSingleChar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 200px;
+  color: white;
+  z-index: 2;
+}
+
+.galleryView {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* .galleryContainer {
+    display: flex;
+    width: 1400px;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: auto;
+} */
+
+.galleryContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: calc(var(--width) * var(--cols));
+}
+
+.galleryContainer > div {
+  width: var(--width);
+  height: var(--height);
+}
+
+.galleryContainer::after {
+  gap: 10px;
+}
+
+@media (max-width: 600px) {
+  .userButton {
+    width: 77px;
+    height: 77px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .galleryContainer {
+    width: 100%;
+  }
+}
